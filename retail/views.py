@@ -10,6 +10,7 @@ class RetailChainViewSet(viewsets.ModelViewSet):
     serializer_class = RetailChainSerializer
     queryset = RetailChain.objects.all()
     filter_backends = [SearchFilter]
+    search_fields = ["country"]
 
     def perform_update(self, serializer):
         if 'debt' in serializer.validated_data:
