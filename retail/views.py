@@ -14,7 +14,6 @@ class RetailChainViewSet(viewsets.ModelViewSet):
     def perform_update(self, serializer):
         if 'debt' in serializer.validated_data:
             serializer.validated_data.pop('debt')
-            raise Exception("You can't update dept")
         super().perform_update(serializer)
 
 
